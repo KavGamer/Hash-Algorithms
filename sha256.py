@@ -133,49 +133,5 @@ def SHA256(input):
             hash = hash + hexTable[math.floor(H[i]/16**j) % 16]
     return hash
 
-def xfrange(start, stop, step):
-    i = 0
-    while start + i * step < stop:
-        yield start + i * step
-        i += 1
-
 result=SHA256("abcd")
 print(result)
-
-def calc(s,d,R):
-    print(s,d)
-    for k in R[s:d]:
-        pass
-        if int(385875968*k)==1468785591:
-            print("ONE")
-        if int(402653184*k)==1468785591:
-            print("TWO")
-        #print(int(385875968*k),"< H[7] <",int(402653184*k))
-            
-    return 0
-
-def secret(hash):
-    hash=hash[::-1]
-    hexTable = "0123456789abcdef"
-    print(hexTable.index(hash[0]))
-    R=list(xfrange(2,4,0.00000001))
-
-    threads=[]
-    print("R:",len(R))
-    n=16
-    for i in range(n):
-        t=threading.Thread(target=calc,args=[int((len(R)/n)*i),int((len(R)/n)*(i+1)),R])
-        t.start()
-        threads.append(t)
-    for i in threads:
-        t.join()
-
-
-    #print(int(385875968*k),"< H[7] <",int(402653184*k))
-
-
-    for j in range(7)[::-1]:
-        pass
-    return "ok"
-special=secret(result)
-print(special)
