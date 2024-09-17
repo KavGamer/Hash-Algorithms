@@ -135,3 +135,16 @@ def SHA256(input):
 
 result=SHA256("abcd")
 print(result)
+
+
+def MAGIC(hash):
+    hexTable = "0123456789abcdef"
+    print(hash)
+    for i in hash:
+        pass
+
+
+
+
+truc=MAGIC(result)
+print(truc)
